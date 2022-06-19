@@ -57,7 +57,7 @@ def game():
         print_field_for_game(field)
         win = check_win(field)
         if win == True:
-            print(f"Выиграл компьютр")
+            print(f"Выиграл компьютер")
             break
         count += 1
         # print(count)
