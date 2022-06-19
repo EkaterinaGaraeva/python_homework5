@@ -16,11 +16,12 @@ def print_field_for_game(list_with_field):
 
 def entering_value(list_with_field):
     print("Введите номер клетки")
-    cell_number = int(input())
-    while (list_with_field[cell_number - 1] == "x" or list_with_field[cell_number - 1] == "0"):
-        print("Эта клетка уже занята, введите другой номер клетки")
-        cell_number = int(input())
-    list_with_field[cell_number - 1] = "x"
+    cell_number = input()
+    while ((cell_number.isnumeric() != True) or (int(cell_number) < 1) or (int(cell_number) > 9)) \
+    or (list_with_field[int(cell_number) - 1] == "x" or list_with_field[int(cell_number) - 1] == "0"):
+        print("Номер не верен или клетка уже занята, введите номер клетки в виде цифры от 1 до 9")
+        cell_number = input()
+    list_with_field[int(cell_number) - 1] = "x"
 
 def computer_running(list_with_field):
     cell_number = random.randint(0, 9)
